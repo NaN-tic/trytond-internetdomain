@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+        <!-- Groups -->
+        <record model="res.group" id="group_internetdomain">
+            <field name="name">Internet Domain</field>
+        </record>
+        
+        <!-- Icon -->
+        <record model="ir.ui.icon" id="internetdomain_icon">
+            <field name="name">tryton-internetdomain</field>
+            <field name="path">icons/tryton-internetdomain.svg</field>
+        </record>
+
+        <!-- Menu Top -->
+        <menuitem name="Internet Domain" id="menu_internetdomain" sequence="3" icon="tryton-internetdomain"/>
+
+        <!-- internetdomain.domain -->
+        <record model="ir.ui.view" id="internetdomain_domain_view_form">
+            <field name="model">internetdomain.domain</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <![CDATA[
+                <form string="Domains" col="6">
+                    <label name="name"/>
+                    <field name="name"/>
+                    <label name="party"/>
+                    <field name="party"/>
+                    <label name="party_address"/>
+                    <field name="party_address"/>
+                    <notebook colspan="6">
+                        <page string="Renewals" id="renewals">
+                            <field name="renewal"/>
+                        </page>
+                        <page string="Products" id="products">
+                            <field name="products" colspan="2"
+                                view_ids="product.product_view_tree"/>
+                        </page>
+                        <page string="Domain" id="domain">
+                            <label name="company"/>
+                            <field name="company"/>
+                            <label name="active"/>
+                            <field name="active"/>
+                            <label name="date_create"/>
+                            <field name="date_create"/>
+                            <label name="date_expire"/>
+                            <field name="date_expire"/>
+                            <label name="registrator"/>
+                            <field name="registrator"/>
+                            <group col="3" colspan="2" id="registrator_website">
+                                <label name="registrator_website"/>
+                                <field name="registrator_website"/>
+                                <field name="registrator_website" widget="url"/>
+                            </group>
+                        </page>
+                        <page string="Server" id="server">
+                            <label name="dns1"/>
+                            <field name="dns1"/>
+                            <label name="dns2"/>
+                            <field name="dns2"/>
+                            <label name="dns3"/>
+                            <field name="dns3"/>
+                            <label name="dns4"/>
+                            <field name="dns4"/>
+                            <label name="ip"/>
+                            <field name="ip"/>
+                        </page>
+                        <page string="Comment" id="comment">
+                            <field name="comment"/>
+                        </page>
+                    </notebook>
+                </form>
+                ]]>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="internetdomain_domain_view_tree">
+            <field name="model">internetdomain.domain</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <![CDATA[
+                <tree string="Domains" colors="If(Bool(Eval('warning')), 'red', 'blue')">
+                    <field name="name"/>
+                    <field name="party"/>
+                    <field name="date_create"/>
+                    <field name="date_expire"/>
+                    <field name="registrator"/>
+                    <field name="warning"/>
+                </tree>
+                ]]>
+            </field>
+        </record>
+
+        <!-- Actions / Menu -->
+        <record model="ir.action.act_window" id="act_internetdomain_domain_form">
+            <field name="name">Domains</field>
+            <field name="res_model">internetdomain.domain</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_internetdomain_domain_form_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="internetdomain_domain_view_tree"/>
+            <field name="act_window" ref="act_internetdomain_domain_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_internetdomain_domain_form_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="internetdomain_domain_view_form"/>
+            <field name="act_window" ref="act_internetdomain_domain_form"/>
+        </record>
+        <menuitem parent="menu_internetdomain" action="act_internetdomain_domain_form"
+            id="menu_internetdomain_domain_form"/>
+
+        <!-- internetdomain.renewal -->
+        <record model="ir.ui.view" id="internetdomain_renewal_view_form">
+            <field name="model">internetdomain.renewal</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <![CDATA[
+                <form string="Renewal" col="6">
+                    <label name="domain"/>
+                    <field name="domain"/>
+                    <notebook colspan="6">
+                        <page string="Information" id="information">
+                            <label name="date_renewal"/>
+                            <field name="date_renewal"/>
+                            <label name="date_expire"/>
+                            <field name="date_expire"/>
+                            <label name="registrator"/>
+                            <field name="registrator"/>
+                        </page>
+                        <page string="Comment" id="comment">
+                            <field name="comment"/>
+                        </page>
+                    </notebook>
+                </form>
+                ]]>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="internetdomain_renewal_view_tree">
+            <field name="model">internetdomain.renewal</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <![CDATA[
+                <tree string="Renewals">
+                    <field name="domain"/>
+                    <field name="date_renewal"/>
+                    <field name="date_expire"/>
+                    <field name="registrator"/>
+                </tree>
+                ]]>
+            </field>
+        </record>
+
+        <!-- Access -->
+        <record model="ir.model.access" id="access_internetdomain_domain">
+            <field name="model" search="[('model', '=', 'internetdomain.domain')]"/>
+            <field name="group" ref="group_internetdomain"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <!-- End internetdomain.domain -->
+
+    </data>
+</tryton>

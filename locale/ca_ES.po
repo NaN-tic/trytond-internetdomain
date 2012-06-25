@@ -1,0 +1,251 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:company.company,idomain_alert_expire:"
+msgid "Domain Alert Expire"
+msgstr "Alerta venciment dominis"
+
+msgctxt "field:internetdomain.domain,active:"
+msgid "Active"
+msgstr "Actiu"
+
+msgctxt "field:internetdomain.domain,comment:"
+msgid "Comment"
+msgstr "Comentari"
+
+msgctxt "field:internetdomain.domain,company:"
+msgid "Company"
+msgstr "Empresa"
+
+msgctxt "field:internetdomain.domain,contact_address:"
+msgid "Contact Address"
+msgstr "Direcció contacte"
+
+msgctxt "field:internetdomain.domain,create_date:"
+msgid "Create Date"
+msgstr "Data creació"
+
+msgctxt "field:internetdomain.domain,create_uid:"
+msgid "Create User"
+msgstr "Usuari creació"
+
+msgctxt "field:internetdomain.domain,date_create:"
+msgid "Date Create"
+msgstr "Data creació"
+
+msgctxt "field:internetdomain.domain,date_expire:"
+msgid "Date expire"
+msgstr "Data venciment"
+
+msgctxt "field:internetdomain.domain,dns1:"
+msgid "DNS Primary"
+msgstr "DNS Primari"
+
+msgctxt "field:internetdomain.domain,dns2:"
+msgid "DNS Secundary"
+msgstr "DNS Secundari"
+
+msgctxt "field:internetdomain.domain,dns3:"
+msgid "DNS Secundary (2)"
+msgstr "DNS Secundari (2)"
+
+msgctxt "field:internetdomain.domain,dns4:"
+msgid "DNS Secundary (3)"
+msgstr "DNS Secundari (3)"
+
+msgctxt "field:internetdomain.domain,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:internetdomain.domain,ip:"
+msgid "IP"
+msgstr "IP"
+
+msgctxt "field:internetdomain.domain,name:"
+msgid "Name"
+msgstr "Domini"
+
+msgctxt "field:internetdomain.domain,party:"
+msgid "Party"
+msgstr "Tercers"
+
+msgctxt "field:internetdomain.domain,products:"
+msgid "Products"
+msgstr "Productes"
+
+msgctxt "field:internetdomain.domain,rec_name:"
+msgid "Name"
+msgstr "Domini"
+
+msgctxt "field:internetdomain.domain,registrator:"
+msgid "Registrator"
+msgstr "Registrador"
+
+msgctxt "field:internetdomain.domain,registrator_website:"
+msgid "Website"
+msgstr "Lloc web"
+
+msgctxt "field:internetdomain.domain,renewal:"
+msgid "Renewals"
+msgstr "Renovacions"
+
+msgctxt "field:internetdomain.domain,warning:"
+msgid "Warning expire"
+msgstr "Alerta venciment"
+
+msgctxt "field:internetdomain.domain,write_date:"
+msgid "Write Date"
+msgstr "Data modificació"
+
+msgctxt "field:internetdomain.domain,write_uid:"
+msgid "Write User"
+msgstr "Usuari modificació"
+
+msgctxt "field:internetdomain.domain-domain.product,create_date:"
+msgid "Create Date"
+msgstr "Data creació"
+
+msgctxt "field:internetdomain.domain-domain.product,create_uid:"
+msgid "Create User"
+msgstr "Usuari creació"
+
+msgctxt "field:internetdomain.domain-domain.product,domain:"
+msgid "Domain"
+msgstr "Domini"
+
+msgctxt "field:internetdomain.domain-domain.product,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:internetdomain.domain-domain.product,product:"
+msgid "Product"
+msgstr "Producte"
+
+msgctxt "field:internetdomain.domain-domain.product,rec_name:"
+msgid "Name"
+msgstr "Domini"
+
+msgctxt "field:internetdomain.domain-domain.product,write_date:"
+msgid "Write Date"
+msgstr "Data modificació"
+
+msgctxt "field:internetdomain.domain-domain.product,write_uid:"
+msgid "Write User"
+msgstr "Usuari modificació"
+
+msgctxt "field:internetdomain.renewal,comment:"
+msgid "Comment"
+msgstr "Comentari"
+
+msgctxt "field:internetdomain.renewal,create_date:"
+msgid "Create Date"
+msgstr "Data creació"
+
+msgctxt "field:internetdomain.renewal,create_uid:"
+msgid "Create User"
+msgstr "Usuari creació"
+
+msgctxt "field:internetdomain.renewal,date_expire:"
+msgid "Date Expire"
+msgstr "Data venciment"
+
+msgctxt "field:internetdomain.renewal,date_renewal:"
+msgid "Date Renewal"
+msgstr "Data renovació"
+
+msgctxt "field:internetdomain.renewal,domain:"
+msgid "Domain"
+msgstr "Domini"
+
+msgctxt "field:internetdomain.renewal,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:internetdomain.renewal,rec_name:"
+msgid "Name"
+msgstr "Domini"
+
+msgctxt "field:internetdomain.renewal,registrator:"
+msgid "Registrator"
+msgstr "Registrador"
+
+msgctxt "field:internetdomain.renewal,write_date:"
+msgid "Write Date"
+msgstr "Data modificació"
+
+msgctxt "field:internetdomain.renewal,write_uid:"
+msgid "Write User"
+msgstr "Usuari modificació"
+
+msgctxt "help:company.company,idomain_alert_expire:"
+msgid "Days notice of expire (separated with comma. Ex. 30,15,10)"
+msgstr "Dies d'avís de venciment (separats amb coma. Per exemple: 30,15,10)"
+
+msgctxt "model:internetdomain.domain,name:"
+msgid "Domain"
+msgstr "Domini"
+
+msgctxt "model:internetdomain.domain-domain.product,name:"
+msgid "Domain - Product"
+msgstr "Domini - Producte"
+
+msgctxt "model:internetdomain.renewal,name:"
+msgid "Renewal"
+msgstr "Renovació"
+
+msgctxt "model:ir.action,name:act_internetdomain_domain_form"
+msgid "Domains"
+msgstr "Dominis"
+
+msgctxt "model:ir.ui.menu,name:menu_internetdomain"
+msgid "Internet Domain"
+msgstr "Dominis internet"
+
+msgctxt "model:ir.ui.menu,name:menu_internetdomain_domain_form"
+msgid "Domains"
+msgstr "Dominis"
+
+msgctxt "model:res.group,name:group_internetdomain"
+msgid "Internet Domain"
+msgstr "Dominis internet"
+
+msgctxt "view:internetdomain.domain:"
+msgid "Comment"
+msgstr "Comentari"
+
+msgctxt "view:internetdomain.domain:"
+msgid "Domain"
+msgstr "Domini"
+
+msgctxt "view:internetdomain.domain:"
+msgid "Domains"
+msgstr "Dominis"
+
+msgctxt "view:internetdomain.domain:"
+msgid "Products"
+msgstr "Productes"
+
+msgctxt "view:internetdomain.domain:"
+msgid "Renewals"
+msgstr "Renovacions"
+
+msgctxt "view:internetdomain.domain:"
+msgid "Server"
+msgstr "Servidor"
+
+msgctxt "view:internetdomain.renewal:"
+msgid "Comment"
+msgstr "Comentari"
+
+msgctxt "view:internetdomain.renewal:"
+msgid "Information"
+msgstr "Informació"
+
+msgctxt "view:internetdomain.renewal:"
+msgid "Renewal"
+msgstr "Renovació"
+
+msgctxt "view:internetdomain.renewal:"
+msgid "Renewals"
+msgstr "Renovacions"
