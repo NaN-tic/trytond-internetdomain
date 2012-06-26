@@ -35,7 +35,7 @@ msgid "Date Create"
 msgstr "Data creació"
 
 msgctxt "field:internetdomain.domain,date_expire:"
-msgid "Date expire"
+msgid "Date expired"
 msgstr "Data venciment"
 
 msgctxt "field:internetdomain.domain,dns1:"
@@ -70,6 +70,10 @@ msgctxt "field:internetdomain.domain,party:"
 msgid "Party"
 msgstr "Tercers"
 
+msgctxt "field:internetdomain.domain,party_address:"
+msgid "Address"
+msgstr "Adreça"
+
 msgctxt "field:internetdomain.domain,products:"
 msgid "Products"
 msgstr "Productes"
@@ -91,7 +95,7 @@ msgid "Renewals"
 msgstr "Renovacions"
 
 msgctxt "field:internetdomain.domain,warning:"
-msgid "Warning expire"
+msgid "Warning expired"
 msgstr "Alerta venciment"
 
 msgctxt "field:internetdomain.domain,write_date:"

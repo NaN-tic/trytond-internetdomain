@@ -26,9 +26,9 @@ class Domain(ModelSQL, ModelView):
         'get_expire')
     warning = fields.Function(fields.Boolean('Warning expired'),
         'get_warning')
-    party = fields.Many2One('party.party', 'Party',
-        required=True)
-    party_address = fields.Many2One('party.address', 'Contact Address',
+    party = fields.Many2One('party.party', 'Party', 
+        on_change=['party', 'party_address', 'company'], required=True)
+    party_address = fields.Many2One('party.address', 'Address',
         required=True, depends=['party'],
         domain=[('party', '=', Eval('party'))])
     registrator = fields.Function(fields.Many2One('party.party', 'Registrator'),
@@ -121,6 +121,23 @@ class Domain(ModelSQL, ModelView):
             result[domain.id] = warning_expire
 
         return result
+
+    def on_change_party(self, vals):
+        pool = Pool()
+        party_obj = pool.get('party.party')
+        address_obj = pool.get('party.address')
+        res = {
+            'party_address': None,
+        }
+
+        if vals.get('party'):
+            party = party_obj.browse(vals['party'])
+            res['party_address'] = party_obj.address_get(party.id,
+                    type='invoice')
+        if res['party_address']:
+            res['party_address.rec_name'] = address_obj.browse(
+                    res['party_address']).rec_name
+        return res
 
     def on_change_registrator(self, values):
         """When change registrator, get website value"""

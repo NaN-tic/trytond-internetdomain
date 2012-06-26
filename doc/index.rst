@@ -1,4 +1,4 @@
-HelloWord Module
-###############
+Internet Domain Module
+######################
 
-The helloword module is example tryton module.
+The Internet Domain module manage domains and renewals.
