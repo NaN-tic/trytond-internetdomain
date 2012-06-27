@@ -81,7 +81,7 @@ this repository contains the full copyright notices and license terms. -->
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <![CDATA[
-                <tree string="Domains" colors="If(Bool(Eval('warning')), 'red', 'blue')">
+                <tree string="Domains" colors="If(Bool(Eval('warning')), 'red', 'black')">
                     <field name="name"/>
                     <field name="party"/>
                     <field name="date_create"/>
