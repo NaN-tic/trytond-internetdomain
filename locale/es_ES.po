@@ -4,15 +4,15 @@ msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:company.company,idomain_alert_expire:"
 msgid "Domain Alert Expire"
-msgstr "Alerta venciment dominis"
+msgstr "Alerta vencimientos dominios"
 
 msgctxt "field:internetdomain.domain,active:"
 msgid "Active"
-msgstr "Actiu"
+msgstr "Activo"
 
 msgctxt "field:internetdomain.domain,comment:"
 msgid "Comment"
-msgstr "Comentari"
+msgstr "Comentario"
 
 msgctxt "field:internetdomain.domain,company:"
 msgid "Company"
@@ -20,39 +20,39 @@ msgstr "Empresa"
 
 msgctxt "field:internetdomain.domain,contact_address:"
 msgid "Contact Address"
-msgstr "Direcció contacte"
+msgstr "Dirección contacto"
 
 msgctxt "field:internetdomain.domain,create_date:"
 msgid "Create Date"
-msgstr "Data creació"
+msgstr "Fecha creación"
 
 msgctxt "field:internetdomain.domain,create_uid:"
 msgid "Create User"
-msgstr "Usuari creació"
+msgstr "Usuario creación"
 
 msgctxt "field:internetdomain.domain,date_create:"
 msgid "Date Create"
-msgstr "Data creació"
+msgstr "Fecha creación"
 
 msgctxt "field:internetdomain.domain,date_expire:"
 msgid "Date expired"
-msgstr "Data venciment"
+msgstr "Fecha vencimiento"
 
 msgctxt "field:internetdomain.domain,dns1:"
 msgid "DNS Primary"
-msgstr "DNS Primari"
+msgstr "DNS Primario"
 
 msgctxt "field:internetdomain.domain,dns2:"
 msgid "DNS Secundary"
-msgstr "DNS Secundari"
+msgstr "DNS Secundario"
 
 msgctxt "field:internetdomain.domain,dns3:"
 msgid "DNS Secundary (2)"
-msgstr "DNS Secundari (2)"
+msgstr "DNS Secundario (2)"
 
 msgctxt "field:internetdomain.domain,dns4:"
 msgid "DNS Secundary (3)"
-msgstr "DNS Secundari (3)"
+msgstr "DNS Secundario (3)"
 
 msgctxt "field:internetdomain.domain,id:"
 msgid "ID"
@@ -64,11 +64,11 @@ msgstr "IP"
 
 msgctxt "field:internetdomain.domain,name:"
 msgid "Name"
-msgstr "Domini"
+msgstr "Dominio"
 
 msgctxt "field:internetdomain.domain,party:"
 msgid "Party"
-msgstr "Tercers"
+msgstr "Tercero"
 
 msgctxt "field:internetdomain.domain,party_address:"
 msgid "Address"
@@ -76,11 +76,11 @@ msgstr "Dirección"
 
 msgctxt "field:internetdomain.domain,products:"
 msgid "Products"
-msgstr "Productes"
+msgstr "Productos"
 
 msgctxt "field:internetdomain.domain,rec_name:"
 msgid "Name"
-msgstr "Domini"
+msgstr "Dominio"
 
 msgctxt "field:internetdomain.domain,registrator:"
 msgid "Registrator"
@@ -88,35 +88,35 @@ msgstr "Registrador"
 
 msgctxt "field:internetdomain.domain,registrator_website:"
 msgid "Website"
-msgstr "Lloc web"
+msgstr "Sitio web"
 
 msgctxt "field:internetdomain.domain,renewal:"
 msgid "Renewals"
-msgstr "Renovacions"
+msgstr "Renovaciones"
 
 msgctxt "field:internetdomain.domain,warning:"
 msgid "Warning expired"
-msgstr "Alerta venciment"
+msgstr "Alerta vencimiento"
 
 msgctxt "field:internetdomain.domain,write_date:"
 msgid "Write Date"
-msgstr "Data modificació"
+msgstr "Fecha modificación"
 
 msgctxt "field:internetdomain.domain,write_uid:"
 msgid "Write User"
-msgstr "Usuari modificació"
+msgstr "Usuario modificación"
 
 msgctxt "field:internetdomain.domain-domain.product,create_date:"
 msgid "Create Date"
-msgstr "Data creació"
+msgstr "Fecha creación"
 
 msgctxt "field:internetdomain.domain-domain.product,create_uid:"
 msgid "Create User"
-msgstr "Usuari creació"
+msgstr "Usuario creación"
 
 msgctxt "field:internetdomain.domain-domain.product,domain:"
 msgid "Domain"
-msgstr "Domini"
+msgstr "Dominio"
 
 msgctxt "field:internetdomain.domain-domain.product,id:"
 msgid "ID"
@@ -124,43 +124,43 @@ msgstr "ID"
 
 msgctxt "field:internetdomain.domain-domain.product,product:"
 msgid "Product"
-msgstr "Producte"
+msgstr "Producto"
 
 msgctxt "field:internetdomain.domain-domain.product,rec_name:"
 msgid "Name"
-msgstr "Domini"
+msgstr "Dominio"
 
 msgctxt "field:internetdomain.domain-domain.product,write_date:"
 msgid "Write Date"
-msgstr "Data modificació"
+msgstr "Fecha modificación"
 
 msgctxt "field:internetdomain.domain-domain.product,write_uid:"
 msgid "Write User"
-msgstr "Usuari modificació"
+msgstr "Usuario modificación"
 
 msgctxt "field:internetdomain.renewal,comment:"
 msgid "Comment"
-msgstr "Comentari"
+msgstr "Comentario"
 
 msgctxt "field:internetdomain.renewal,create_date:"
 msgid "Create Date"
-msgstr "Data creació"
+msgstr "Fecha creación"
 
 msgctxt "field:internetdomain.renewal,create_uid:"
 msgid "Create User"
-msgstr "Usuari creació"
+msgstr "Usuario creación"
 
 msgctxt "field:internetdomain.renewal,date_expire:"
 msgid "Date Expire"
-msgstr "Data venciment"
+msgstr "Fecha vencimiento"
 
 msgctxt "field:internetdomain.renewal,date_renewal:"
 msgid "Date Renewal"
-msgstr "Data renovació"
+msgstr "Fecha renovación"
 
 msgctxt "field:internetdomain.renewal,domain:"
 msgid "Domain"
-msgstr "Domini"
+msgstr "Dominio"
 
 msgctxt "field:internetdomain.renewal,id:"
 msgid "ID"
@@ -168,7 +168,7 @@ msgstr "ID"
 
 msgctxt "field:internetdomain.renewal,rec_name:"
 msgid "Name"
-msgstr "Domini"
+msgstr "Dominio"
 
 msgctxt "field:internetdomain.renewal,registrator:"
 msgid "Registrator"
@@ -176,63 +176,63 @@ msgstr "Registrador"
 
 msgctxt "field:internetdomain.renewal,write_date:"
 msgid "Write Date"
-msgstr "Data modificació"
+msgstr "Fecha modificación"
 
 msgctxt "field:internetdomain.renewal,write_uid:"
 msgid "Write User"
-msgstr "Usuari modificació"
+msgstr "Usuario modificación"
 
 msgctxt "help:company.company,idomain_alert_expire:"
 msgid "Days notice of expire (separated with comma. Ex. 30,15,10)"
-msgstr "Dies d'avís de venciment (separats amb coma. Per exemple: 30,15,10)"
+msgstr "Días de aviso de vencimiento (separados con la coma. Por ejemplo: 30,15,10)"
 
 msgctxt "model:internetdomain.domain,name:"
 msgid "Domain"
-msgstr "Domini"
+msgstr "Dominio"
 
 msgctxt "model:internetdomain.domain-domain.product,name:"
 msgid "Domain - Product"
-msgstr "Domini - Producte"
+msgstr "Dominio - Producto"
 
 msgctxt "model:internetdomain.renewal,name:"
 msgid "Renewal"
-msgstr "Renovació"
+msgstr "Renovación"
 
 msgctxt "model:ir.action,name:act_internetdomain_domain_form"
 msgid "Domains"
-msgstr "Dominis"
+msgstr "Dominios"
 
 msgctxt "model:ir.ui.menu,name:menu_internetdomain"
 msgid "Internet Domain"
-msgstr "Dominis internet"
+msgstr "Dominios internet"
 
 msgctxt "model:ir.ui.menu,name:menu_internetdomain_domain_form"
 msgid "Domains"
-msgstr "Dominis"
+msgstr "Dominios"
 
 msgctxt "model:res.group,name:group_internetdomain"
 msgid "Internet Domain"
-msgstr "Dominis internet"
+msgstr "Dominios internet"
 
 msgctxt "view:internetdomain.domain:"
 msgid "Comment"
-msgstr "Comentari"
+msgstr "Comentario"
 
 msgctxt "view:internetdomain.domain:"
 msgid "Domain"
-msgstr "Domini"
+msgstr "Dominio"
 
 msgctxt "view:internetdomain.domain:"
 msgid "Domains"
-msgstr "Dominis"
+msgstr "Dominios"
 
 msgctxt "view:internetdomain.domain:"
 msgid "Products"
-msgstr "Productes"
+msgstr "Productos"
 
 msgctxt "view:internetdomain.domain:"
 msgid "Renewals"
-msgstr "Renovacions"
+msgstr "Renovaciones"
 
 msgctxt "view:internetdomain.domain:"
 msgid "Server"
@@ -240,16 +240,16 @@ msgstr "Servidor"
 
 msgctxt "view:internetdomain.renewal:"
 msgid "Comment"
-msgstr "Comentari"
+msgstr "Comentario"
 
 msgctxt "view:internetdomain.renewal:"
 msgid "Information"
-msgstr "Informació"
+msgstr "Información"
 
 msgctxt "view:internetdomain.renewal:"
 msgid "Renewal"
-msgstr "Renovació"
+msgstr "Renovación"
 
 msgctxt "view:internetdomain.renewal:"
 msgid "Renewals"
-msgstr "Renovacions"
+msgstr "Renovaciones"

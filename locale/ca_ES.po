@@ -68,7 +68,7 @@ msgstr "Domini"
 
 msgctxt "field:internetdomain.domain,party:"
 msgid "Party"
-msgstr "Tercers"
+msgstr "Tercer"
 
 msgctxt "field:internetdomain.domain,party_address:"
 msgid "Address"
