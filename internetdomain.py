@@ -140,7 +140,7 @@ class Renewal(ModelSQL, ModelView):
     __name__ = 'internetdomain.renewal'
 
     domain = fields.Many2One('internetdomain.domain', 'Domain', 
-        ondelete='CASCADE', select=True)
+        ondelete='CASCADE', select=True, required=True)
     date_renewal = fields.Date('Date Renewal', required=True)
     date_expire = fields.Date('Date Expire', required=True)
     registrator = fields.Many2One('party.party', 'Registrator', required=True)
