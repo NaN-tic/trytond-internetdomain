@@ -202,6 +202,10 @@ msgctxt "model:ir.action,name:act_internetdomain_domain_form"
 msgid "Domains"
 msgstr "Dominis"
 
+msgctxt "model:ir.action,name:act_internetdomain_renewal_form"
+msgid "Renewals"
+msgstr "Renovacions"
+
 msgctxt "model:ir.ui.menu,name:menu_internetdomain"
 msgid "Internet Domain"
 msgstr "Dominis internet"
@@ -213,6 +217,10 @@ msgstr "Dominis"
 msgctxt "model:res.group,name:group_internetdomain"
 msgid "Internet Domain"
 msgstr "Dominis internet"
+
+msgctxt "view:company.company:"
+msgid "Domains"
+msgstr "Dominis"
 
 msgctxt "view:internetdomain.domain:"
 msgid "Comment"
