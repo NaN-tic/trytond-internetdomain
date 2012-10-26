@@ -16,6 +16,10 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
 
         <!-- Menu Top -->
         <menuitem name="Internet Domain" id="menu_internetdomain" sequence="3" icon="tryton-internetdomain"/>
+        <record model="ir.ui.menu-res.group" id="menu_internetdomain_group_internetdomain">
+            <field name="menu" ref="menu_internetdomain"/>
+            <field name="group" ref="group_internetdomain"/>
+        </record>
 
         <!-- internetdomain.domain -->
         <record model="ir.ui.view" id="internetdomain_domain_view_form">
@@ -164,5 +168,15 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
         </record>
         <!-- End internetdomain.domain -->
 
+        <record model="ir.action.act_window" id="act_internetdomain_renewal_form">
+            <field name="name">Renewals</field>
+            <field name="res_model">internetdomain.renewal</field>
+            <field name="domain">[("id", "in", Eval('renewal'))]</field>
+        </record>
+        <record model="ir.action.keyword" id="act_open_internetdomain_renewal_keyword1">
+            <field name="keyword">form_relate</field>
+            <field name="model">internetdomain.domain,-1</field>
+            <field name="action" ref="act_internetdomain_renewal_form"/>
+        </record>
     </data>
 </tryton>
