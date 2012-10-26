@@ -184,7 +184,8 @@ msgstr "Usuario modificación"
 
 msgctxt "help:company.company,idomain_alert_expire:"
 msgid "Days notice of expire (separated with comma. Ex. 30,15,10)"
-msgstr "Días de aviso de vencimiento (separados con la coma. Por ejemplo: 30,15,10)"
+msgstr ""
+"Días de aviso de vencimiento (separados con la coma. Por ejemplo: 30,15,10)"
 
 msgctxt "model:internetdomain.domain,name:"
 msgid "Domain"
@@ -202,6 +203,10 @@ msgctxt "model:ir.action,name:act_internetdomain_domain_form"
 msgid "Domains"
 msgstr "Dominios"
 
+msgctxt "model:ir.action,name:act_internetdomain_renewal_form"
+msgid "Renewals"
+msgstr "Renovaciones"
+
 msgctxt "model:ir.ui.menu,name:menu_internetdomain"
 msgid "Internet Domain"
 msgstr "Dominios internet"
@@ -213,6 +218,10 @@ msgstr "Dominios"
 msgctxt "model:res.group,name:group_internetdomain"
 msgid "Internet Domain"
 msgstr "Dominios internet"
+
+msgctxt "view:company.company:"
+msgid "Domains"
+msgstr "Dominios"
 
 msgctxt "view:internetdomain.domain:"
 msgid "Comment"
