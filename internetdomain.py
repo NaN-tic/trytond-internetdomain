@@ -10,10 +10,11 @@ from trytond.pyson import If, Eval, Bool
 
 import datetime
 
+__all__ = ['Domain', 'Renewal', 'DomainProduct']
+
 class Domain(ModelSQL, ModelView):
     'Domain'
-    _name = 'internetdomain.domain'
-    _description = __doc__
+    __name__ = 'internetdomain.domain'
 
     company = fields.Many2One('company.company', 'Company', required=True,
         domain=[
@@ -48,58 +49,48 @@ class Domain(ModelSQL, ModelView):
     products = fields.Many2Many('internetdomain.domain-domain.product',
         'domain', 'product', 'Products')
 
-    def default_active(self):
+    @staticmethod
+    def default_active():
         return True
 
-    def default_company(self):
+    @staticmethod
+    def default_company():
         return Transaction().context.get('company')
 
-    def get_last_renewal(self, domain):
-        """Get last renewal from fomain
-        :param domain: Domain object
-        :return: ID or False
-        """
-
+    def get_last_renewal(self):
+        """Get last renewal from domain"""
         renewal = False
-        renewal_obj = Pool().get('internetdomain.renewal')
-        renewals = renewal_obj.search(
-            [('domain', '=', domain.id)],
+        Renewal = Pool().get('internetdomain.renewal')
+        renewals = Renewal.search(
+            [('domain', '=', self.id)],
             order=[('date_renewal', 'DESC')]
             )
         if len(renewals)>0:
-            renewal = renewal_obj.browse(renewals[0])
+            renewal = Renewal(renewals[0].id)
         return renewal
 
-    def get_registrator(self, ids, name):
+    def get_registrator(self, name=None):
         """Get registrator from domain"""
-        result = {}
-        for domain in self.browse(ids):
-            renewal = self.get_last_renewal(domain)
-            result[domain.id] = renewal and renewal.registrator.id or False
-        return result
+        renewal = self.get_last_renewal()
+        return renewal and renewal.registrator.id or None
 
-    def get_registrator_website(self, ids, name):
+    def get_registrator_website(self, name=None):
         """Get registrator website from domain"""
-        result = {}
-        for domain in self.browse(ids):
-            renewal = self.get_last_renewal(domain)
-            result[domain.id] = renewal and renewal.registrator.website or False
-        return result
+        renewal = self.get_last_renewal()
+        return renewal and renewal.registrator.website or None
 
-    def get_expire(self, ids, name):
+    def get_expire(self, name=None):
         """Get expire date from domain"""
-        result = {}
-        for domain in self.browse(ids):
-            renewal = self.get_last_renewal(domain)
-            result[domain.id] = renewal and renewal.date_expire or False
-        return result
+        renewal = self.get_last_renewal()
+        return renewal and renewal.date_expire or None
 
-    def get_warning(self, ids, name):
+    @classmethod
+    def get_warning(cls, records, name):
         """Get warning if last registration pass today"""
         result = {}
-        for domain in self.browse(ids):
+        for domain in records:
             warning_expire = False
-            renewal = self.get_last_renewal(domain)
+            renewal = cls.get_last_renewal(domain)
 
             if not domain.company.idomain_alert_expire:
                 max_alert = 30 #30 days
@@ -123,40 +114,30 @@ class Domain(ModelSQL, ModelView):
 
         return result
 
-    def on_change_party(self, vals):
-        pool = Pool()
-        party_obj = pool.get('party.party')
-        address_obj = pool.get('party.address')
-        res = {
-            'party_address': None,
-        }
+    def on_change_party(self):
+        address = None
+        changes = {}
+        if self.party:
+            address = self.party.address_get(type='invoice')
+        if address:
+            changes['party_address'] = address.id
+        return changes
 
-        if vals.get('party'):
-            party = party_obj.browse(vals['party'])
-            res['party_address'] = party_obj.address_get(party.id,
-                    type='invoice')
-        if res['party_address']:
-            res['party_address.rec_name'] = address_obj.browse(
-                    res['party_address']).rec_name
-        return res
-
-    def on_change_registrator(self, values):
+    def on_change_registrator(self):
         """When change registrator, get website value"""
-        party_obj = Pool().get('party.party')
-        registrator = values.get('registrator', False)
+        Party = Pool().get('party.party')
+        registrator = self.registrator or  False
         res['registrator_website'] = None
         if registrator:
-            party = party_obj.browse(registrator)
+            party = Party.browse([registrator])[0]
             res['registrator_website'] = party.website and \
                     party.website or None
         return res
 
-Domain()
 
 class Renewal(ModelSQL, ModelView):
     'Renewal'
-    _name = 'internetdomain.renewal'
-    _description = __doc__
+    __name__ = 'internetdomain.renewal'
 
     domain = fields.Many2One('internetdomain.domain', 'Domain', 
         ondelete='CASCADE', select=True)
@@ -165,17 +146,14 @@ class Renewal(ModelSQL, ModelView):
     registrator = fields.Many2One('party.party', 'Registrator', required=True)
     comment = fields.Text('Comment')
 
-Renewal()
 
 class DomainProduct(ModelSQL):
     'Domain - Product'
-    _name = 'internetdomain.domain-domain.product'
+    __name__ = 'internetdomain.domain-domain.product'
     _table = 'internetdomain_domain_product_rel'
-    _description = __doc__
 
     domain = fields.Many2One('internetdomain.domain', 'Domain', ondelete='CASCADE',
             required=True, select=True)
     product = fields.Many2One('product.product', 'Product',
         ondelete='CASCADE', required=True, select=True)
 
-DomainProduct()

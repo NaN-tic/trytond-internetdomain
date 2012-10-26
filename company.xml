@@ -14,6 +14,7 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
                     <xpath
                         expr="/form/notebook/page[@id=&quot;company&quot;]/field[@name=&quot;parent&quot;]"
                         position="after">
+                        <separator string="Domains" colspan="4" id="domains"/>
                         <label name="idomain_alert_expire"/>
                         <field name="idomain_alert_expire"/>
                     </xpath>

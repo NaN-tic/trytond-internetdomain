@@ -40,7 +40,7 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
                         </page>
                         <page string="Domain" id="domain">
                             <label name="company"/>
-                            <field name="company"/>
+                            <field name="company" widget="selection"/>
                             <label name="active"/>
                             <field name="active"/>
                             <label name="date_create"/>
