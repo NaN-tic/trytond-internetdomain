@@ -118,7 +118,7 @@ class Domain(ModelSQL, ModelView):
         address = None
         changes = {}
         if self.party:
-            address = self.party.address_get(type='invoice')
+            address = self.party.address_get()
         if address:
             changes['party_address'] = address.id
         return changes
