@@ -33,14 +33,14 @@ setup(name='trytonzz_internetdomain',
     author='Zikzakmedia SL',
     author_email='zikzak@zikzakmedia.com',
     url='http://www.zikzakmedia.com',
-    download_url="https://bitbucket.org/zikzakmedia/trytonzz-internetdomain",
-    package_dir={'trytonzz.modules.internetdomain': '.'},
+    download_url="https://bitbucket.org/zikzakmedia/trytond-internetdomain",
+    package_dir={'trytond.modules.internetdomain': '.'},
     packages=[
-        'trytonzz.modules.internetdomain',
-        'trytonzz.modules.internetdomain.tests',
+        'trytond.modules.internetdomain',
+        'trytond.modules.internetdomain.tests',
     ],
     package_data={
-        'trytonzz.modules.internetdomain': info.get('xml', []) \
+        'trytond.modules.internetdomain': info.get('xml', []) \
             + ['tryton.cfg', 'locale/*.po', 'icons/*.svg'],
 
     },
@@ -64,9 +64,9 @@ setup(name='trytonzz_internetdomain',
     install_requires=requires,
     zip_safe=False,
     entry_points="""
-    [trytonzz.modules]
-    internetdomain = trytonzz.modules.internetdomain
+    [trytond.modules]
+    internetdomain = trytond.modules.internetdomain
     """,
     test_suite='tests',
-    test_loader='trytonzz.test_loader:Loader',
+    test_loader='trytond.test_loader:Loader',
 )
