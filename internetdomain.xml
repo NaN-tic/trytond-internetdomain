@@ -7,7 +7,11 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
         <record model="res.group" id="group_internetdomain">
             <field name="name">Internet Domain</field>
         </record>
-        
+        <record model="res.user-res.group" id="user_admin_group_internetdomain">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_internetdomain"/>
+        </record>
+
         <!-- Icon -->
         <record model="ir.ui.icon" id="internetdomain_icon">
             <field name="name">tryton-internetdomain</field>
