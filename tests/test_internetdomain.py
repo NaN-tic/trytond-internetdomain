@@ -52,40 +52,41 @@ class DomainTestCase(unittest.TestCase):
 
         with Transaction().start(DB_NAME, USER,
                 context=CONTEXT) as transaction:
-            currency_id = self.currency.create({
+            currency_id = self.currency.create([{
                 'name': 'cu1',
                 'symbol': 'cu1',
                 'code': 'cu1'
-                })
-            company_id = self.company.create({
+                }])[0]
+            company_id = self.company.create([{
                 'name': 'Zikzakmedia',
                 'currency': currency_id,
-                })
-            self.user.write(USER, {
+                }])[0]
+            user = self.user.search([('id', '=', USER)])
+            self.user.write(user, {
                 'main_company': company_id,
                 'company': company_id,
                 })
-            party_id = self.party.create({
+            party_id = self.party.create([{
                 'name': 'Zikzakmedia',
                 'code': '001',
-                })
-            address_id = self.address.create({
+                }])[0]
+            address_id = self.address.create([{
                 'name': 'Raimon Esteve',
                 'party': party_id,
-                })
-            domain_id = self.domain.create({
+                }])[0]
+            domain_id = self.domain.create([{
                 'name': 'zikzakmedia.com',
                 'date_create': datetime.date(2011, 10, 1),
                 'party': party_id,
                 'party_address': address_id,
                 'company': company_id,
-                })
-            renewal_id = self.renewal.create({
+                }])[0]
+            self.renewal.create([{
                 'domain': domain_id,
                 'date_renewal': '2012-06-01',
                 'date_expire': '2013-06-01',
                 'registrator': company_id,
-                })
+                }])
             self.assert_(domain_id)
 
             transaction.cursor.commit()
