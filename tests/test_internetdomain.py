@@ -45,6 +45,7 @@ class DomainTestCase(unittest.TestCase):
         '''
         test_depends()
 
+
     def test0010domain(self):
         '''
         Create domains
@@ -52,42 +53,42 @@ class DomainTestCase(unittest.TestCase):
 
         with Transaction().start(DB_NAME, USER,
                 context=CONTEXT) as transaction:
-            currency_id = self.currency.create([{
+            currency, = self.currency.create([{
                 'name': 'cu1',
                 'symbol': 'cu1',
                 'code': 'cu1'
-                }])[0]
-            company_id = self.company.create([{
+                }])
+            company, = self.company.create([{
                 'name': 'Zikzakmedia',
-                'currency': currency_id,
-                }])[0]
+                'currency': currency.id,
+                }])
             user = self.user.search([('id', '=', USER)])
             self.user.write(user, {
-                'main_company': company_id,
-                'company': company_id,
+                'main_company': company.id,
+                'company': company.id,
                 })
-            party_id = self.party.create([{
+            party, = self.party.create([{
                 'name': 'Zikzakmedia',
                 'code': '001',
-                }])[0]
-            address_id = self.address.create([{
+                }])
+            address, = self.address.create([{
                 'name': 'Raimon Esteve',
-                'party': party_id,
-                }])[0]
-            domain_id = self.domain.create([{
+                'party': party.id,
+                }])
+            domain, = self.domain.create([{
                 'name': 'zikzakmedia.com',
                 'date_create': datetime.date(2011, 10, 1),
-                'party': party_id,
-                'party_address': address_id,
-                'company': company_id,
-                }])[0]
+                'party': party.id,
+                'party_address': address.id,
+                'company': company.id,
+                }])
             self.renewal.create([{
-                'domain': domain_id,
+                'domain': domain.id,
                 'date_renewal': '2012-06-01',
                 'date_expire': '2013-06-01',
-                'registrator': company_id,
+                'registrator': company.id,
                 }])
-            self.assert_(domain_id)
+            self.assert_(domain.id)
 
             transaction.cursor.commit()
 
