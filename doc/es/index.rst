@@ -4,19 +4,6 @@ Dominios de internet
 
 Gestión de dominios de internet. Dominios y renovaciones.
 
-Módulos de los que depende
-==========================
-
-Instalados
-----------
-
-.. toctree::
-   :maxdepth: 1
-
-   /company/index
-   /party/index
-   /product/index
-
 Dependencias
 ------------
 
