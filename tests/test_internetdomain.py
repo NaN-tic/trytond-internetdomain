@@ -47,26 +47,14 @@ class DomainTestCase(unittest.TestCase):
 
 
     def test0010domain(self):
-        '''
-        Create domains
-        '''
-
-        with Transaction().start(DB_NAME, USER,
-                context=CONTEXT) as transaction:
-            currency, = self.currency.create([{
-                'name': 'cu1',
-                'symbol': 'cu1',
-                'code': 'cu1'
-                }])
-            company, = self.company.create([{
-                'name': 'Zikzakmedia',
-                'currency': currency.id,
-                }])
-            user = self.user.search([('id', '=', USER)])
-            self.user.write(user, {
-                'main_company': company.id,
-                'company': company.id,
-                })
+        '''Create domain'''
+        with Transaction().start(DB_NAME, USER, context=CONTEXT) as transaction:
+            company, = self.company.search([('rec_name', '=', 'B2CK')])
+            self.user.write([self.user(USER)], {
+                    'main_company': company.id,
+                    'company': company.id,
+                    })
+            CONTEXT.update(self.user.get_preferences(context_only=True))
             party, = self.party.create([{
                 'name': 'Zikzakmedia',
                 'code': '001',
@@ -94,6 +82,10 @@ class DomainTestCase(unittest.TestCase):
 
 def suite():
     suite = trytond.tests.test_tryton.suite()
+    from trytond.modules.company.tests import test_company
+    for test in test_company.suite():
+        if test not in suite:
+            suite.addTest(test)
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(
         DomainTestCase))
     return suite
