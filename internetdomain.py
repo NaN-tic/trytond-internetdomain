@@ -3,10 +3,9 @@
 #the full copyright notices and license terms.
 
 from trytond.model import ModelView, ModelSQL, fields
-from trytond.tools import safe_eval, datetime_strftime
 from trytond.transaction import Transaction
 from trytond.pool import Pool
-from trytond.pyson import If, Eval, Bool
+from trytond.pyson import If, Eval
 
 import datetime
 
@@ -90,7 +89,6 @@ class Domain(ModelSQL, ModelView):
         result = {}
         for domain in records:
             warning_expire = False
-            renewal = cls.get_last_renewal(domain)
 
             if not domain.company.idomain_alert_expire:
                 max_alert = 30 #30 days
@@ -126,13 +124,14 @@ class Domain(ModelSQL, ModelView):
     def on_change_registrator(self):
         """When change registrator, get website value"""
         Party = Pool().get('party.party')
-        registrator = self.registrator or  False
-        res['registrator_website'] = None
-        if registrator:
-            party = Party.browse([registrator])[0]
-            res['registrator_website'] = party.website and \
+
+        changes = {}
+        changes['registrator_website'] = None
+        if self.registrator:
+            party = Party.browse([self.registrator])[0]
+            changes['registrator_website'] = party.website and \
                     party.website or None
-        return res
+        return changes
 
 
 class Renewal(ModelSQL, ModelView):
