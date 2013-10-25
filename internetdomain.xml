@@ -101,6 +101,19 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
             </field>
         </record>
 
+        <record model="ir.ui.view" id="internetdomain_domain_view_calendar">
+            <field name="model">internetdomain.domain</field>
+            <field name="type">calendar</field>
+            <field name="arch" type="xml">
+                <![CDATA[
+                <calendar string="Domains" dtstart="date_expire">
+                    <field name="name"/>
+                    <field name="party"/>
+                </calendar>
+                ]]>
+            </field>
+        </record>
+
         <!-- Actions / Menu -->
         <record model="ir.action.act_window" id="act_internetdomain_domain_form">
             <field name="name">Domains</field>
@@ -118,6 +131,24 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
         </record>
         <menuitem parent="menu_internetdomain" action="act_internetdomain_domain_form"
             id="menu_internetdomain_domain_form"/>
+
+        <!-- Actions / Menu -->
+        <record model="ir.action.act_window" id="act_internetdomain_domain_calendar">
+            <field name="name">Domains</field>
+            <field name="res_model">internetdomain.domain</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_internetdomain_domain_calendar_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="internetdomain_domain_view_calendar"/>
+            <field name="act_window" ref="act_internetdomain_domain_calendar"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_internetdomain_domain_calendar_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="internetdomain_domain_view_form"/>
+            <field name="act_window" ref="act_internetdomain_domain_calendar"/>
+        </record>
+        <menuitem parent="menu_internetdomain_domain_form" action="act_internetdomain_domain_calendar"
+            id="menu_internetdomain_domain_calendar"/>
 
         <!-- internetdomain.renewal -->
         <record model="ir.ui.view" id="internetdomain_renewal_view_form">

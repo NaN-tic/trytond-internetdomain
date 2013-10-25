@@ -24,7 +24,7 @@ class Domain(ModelSQL, ModelView):
     date_create = fields.Date('Date Create', 
         required=True)
     date_expire = fields.Function(fields.Date('Date expired'),
-        'get_expire')
+        'get_expire', searcher='search_expire')
     warning = fields.Function(fields.Boolean('Warning expired'),
         'get_warning')
     party = fields.Many2One('party.party', 'Party', 
@@ -82,6 +82,10 @@ class Domain(ModelSQL, ModelView):
         """Get expire date from domain"""
         renewal = self.get_last_renewal()
         return renewal and renewal.date_expire or None
+
+    @classmethod
+    def search_expire(cls, name, clause):
+        return [('renewal.date_expire',) + tuple(clause[1:])]
 
     @classmethod
     def get_warning(cls, records, name):
