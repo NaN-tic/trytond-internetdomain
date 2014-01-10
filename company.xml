@@ -3,25 +3,11 @@
 The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
 <tryton>
     <data>
-
         <!-- company.company -->
         <record model="ir.ui.view" id="company_view_form">
             <field name="model">company.company</field>
             <field name="inherit" ref="company.company_view_form"/>
-            <field name="arch" type="xml">
-                <![CDATA[
-                <data>
-                    <xpath
-                        expr="/form/notebook/page[@id=&quot;company&quot;]/field[@name=&quot;parent&quot;]"
-                        position="after">
-                        <separator string="Domains" colspan="4" id="domains"/>
-                        <label name="idomain_alert_expire"/>
-                        <field name="idomain_alert_expire"/>
-                    </xpath>
-                </data>
-                ]]>
-            </field>
+            <field name="name">company_form</field>
         </record>
-
     </data>
 </tryton>

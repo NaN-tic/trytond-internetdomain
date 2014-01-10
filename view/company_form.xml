@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!-- This file is part internetdomain module for Tryton.
+The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
+<data>
+    <xpath
+        expr="/form/notebook/page[@id=&quot;company&quot;]/field[@name=&quot;parent&quot;]"
+        position="after">
+        <separator string="Domains" colspan="4" id="domains"/>
+        <label name="idomain_alert_expire"/>
+        <field name="idomain_alert_expire"/>
+    </xpath>
+</data>

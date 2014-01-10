@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!-- This file is part internetdomain module for Tryton.
+The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
+<tree string="Renewals">
+    <field name="domain"/>
+    <field name="date_renewal"/>
+    <field name="date_expire"/>
+    <field name="registrator"/>
+</tree>

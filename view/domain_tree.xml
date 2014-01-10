@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!-- This file is part internetdomain module for Tryton.
+The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
+<tree string="Domains" colors="If(Bool(Eval('warning')), 'red', 'black')">
+    <field name="name"/>
+    <field name="party"/>
+    <field name="date_create"/>
+    <field name="date_expire"/>
+    <field name="registrator"/>
+    <field name="warning"/>
+</tree>

@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!-- This file is part internetdomain module for Tryton.
+The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
+<form string="Domains" col="6">
+    <label name="name"/>
+    <field name="name"/>
+    <label name="party"/>
+    <field name="party"/>
+    <label name="party_address"/>
+    <field name="party_address"/>
+    <notebook colspan="6">
+        <page string="Renewals" id="renewals">
+            <field name="renewal"/>
+        </page>
+        <page string="Products" id="products">
+            <field name="products" colspan="2"
+                view_ids="product.product_view_tree"/>
+        </page>
+        <page string="Domain" id="domain">
+            <label name="company"/>
+            <field name="company" widget="selection"/>
+            <label name="active"/>
+            <field name="active"/>
+            <label name="date_create"/>
+            <field name="date_create"/>
+            <label name="date_expire"/>
+            <field name="date_expire"/>
+            <label name="registrator"/>
+            <field name="registrator"/>
+            <group col="3" colspan="2" id="registrator_website">
+                <label name="registrator_website"/>
+                <field name="registrator_website"/>
+                <field name="registrator_website" widget="url"/>
+            </group>
+        </page>
+        <page string="Server" id="server">
+            <label name="dns1"/>
+            <field name="dns1"/>
+            <label name="dns2"/>
+            <field name="dns2"/>
+            <label name="dns3"/>
+            <field name="dns3"/>
+            <label name="dns4"/>
+            <field name="dns4"/>
+            <label name="ip"/>
+            <field name="ip"/>
+        </page>
+        <page string="Comment" id="comment">
+            <field name="comment"/>
+        </page>
+    </notebook>
+</form>
