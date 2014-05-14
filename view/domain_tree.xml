@@ -8,4 +8,5 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
     <field name="date_expire"/>
     <field name="registrator"/>
     <field name="warning"/>
+    <field name="active" tree_invisible="1"/>
 </tree>
