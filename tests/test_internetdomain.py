@@ -49,7 +49,7 @@ class DomainTestCase(unittest.TestCase):
     def test0010domain(self):
         '''Create domain'''
         with Transaction().start(DB_NAME, USER, context=CONTEXT) as transaction:
-            company, = self.company.search([('rec_name', '=', 'B2CK')])
+            company, = self.company.search([('rec_name', '=', 'Dunder Mifflin')])
             self.user.write([self.user(USER)], {
                     'main_company': company.id,
                     'company': company.id,
