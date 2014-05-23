@@ -27,8 +27,7 @@ class Domain(ModelSQL, ModelView):
         'get_expire', searcher='search_expire')
     warning = fields.Function(fields.Boolean('Warning expired'),
         'get_warning')
-    party = fields.Many2One('party.party', 'Party', 
-        on_change=['party', 'party_address', 'company'], required=True)
+    party = fields.Many2One('party.party', 'Party', required=True)
     party_address = fields.Many2One('party.address', 'Address',
         required=True, depends=['party'],
         domain=[('party', '=', Eval('party'))])
@@ -116,6 +115,7 @@ class Domain(ModelSQL, ModelView):
 
         return result
 
+    @fields.depends('party', 'party_address', 'company')
     def on_change_party(self):
         address = None
         changes = {}
