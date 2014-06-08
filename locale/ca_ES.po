@@ -18,10 +18,6 @@ msgctxt "field:internetdomain.domain,company:"
 msgid "Company"
 msgstr "Empresa"
 
-msgctxt "field:internetdomain.domain,contact_address:"
-msgid "Contact Address"
-msgstr "Direcció contacte"
-
 msgctxt "field:internetdomain.domain,create_date:"
 msgid "Create Date"
 msgstr "Data creació"
@@ -198,6 +194,10 @@ msgctxt "model:internetdomain.renewal,name:"
 msgid "Renewal"
 msgstr "Renovació"
 
+msgctxt "model:ir.action,name:act_internetdomain_domain_calendar"
+msgid "Domains"
+msgstr "Dominis"
+
 msgctxt "model:ir.action,name:act_internetdomain_domain_form"
 msgid "Domains"
 msgstr "Dominis"
@@ -209,6 +209,10 @@ msgstr "Renovacions"
 msgctxt "model:ir.ui.menu,name:menu_internetdomain"
 msgid "Internet Domain"
 msgstr "Dominis internet"
+
+msgctxt "model:ir.ui.menu,name:menu_internetdomain_domain_calendar"
+msgid "Domains"
+msgstr "Dominis"
 
 msgctxt "model:ir.ui.menu,name:menu_internetdomain_domain_form"
 msgid "Domains"
