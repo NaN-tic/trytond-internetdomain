@@ -5,7 +5,7 @@
 from trytond.model import ModelView, ModelSQL, fields
 from trytond.transaction import Transaction
 from trytond.pool import Pool
-from trytond.pyson import If, Eval
+from trytond.pyson import If, Eval, Bool
 
 import datetime
 
@@ -54,6 +54,11 @@ class Domain(ModelSQL, ModelView):
     @staticmethod
     def default_company():
         return Transaction().context.get('company')
+
+    @classmethod
+    def view_attributes(cls):
+        return [('/tree', 'colors',
+                If(Bool(Eval('warning')), 'red', 'black'))]
 
     def get_last_renewal(self):
         """Get last renewal from domain"""
