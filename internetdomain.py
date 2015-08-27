@@ -120,27 +120,21 @@ class Domain(ModelSQL, ModelView):
 
         return result
 
-    @fields.depends('party', 'party_address', 'company')
+    @fields.depends('party', 'party_address')
     def on_change_party(self):
-        address = None
-        changes = {}
-        if self.party:
+        if self.party and not self.party_address:
             address = self.party.address_get()
-        if address:
-            changes['party_address'] = address.id
-        return changes
+            self.party_address = address
 
+    @fields.depends('registrator')
     def on_change_registrator(self):
         """When change registrator, get website value"""
         Party = Pool().get('party.party')
 
-        changes = {}
-        changes['registrator_website'] = None
         if self.registrator:
             party = Party.browse([self.registrator])[0]
-            changes['registrator_website'] = party.website and \
+            self.registrator_website = party.website and \
                     party.website or None
-        return changes
 
 
 class Renewal(ModelSQL, ModelView):
