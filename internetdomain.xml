@@ -94,13 +94,20 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
         </record>
 
         <!-- Access -->
-        <record model="ir.model.access" id="access_internetdomain_domain">
+        <record model="ir.model.access" id="access_group_internetdomain_domain">
             <field name="model" search="[('model', '=', 'internetdomain.domain')]"/>
             <field name="group" ref="group_internetdomain"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="True"/>
             <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_internetdomain_domain">
+            <field name="model" search="[('model', '=', 'internetdomain.domain')]"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
         </record>
         <!-- End internetdomain.domain -->
 
