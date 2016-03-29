@@ -5,10 +5,9 @@ from trytond.model import fields
 from trytond.pool import PoolMeta
 
 __all__ = ['Company']
-__metaclass__ = PoolMeta
 
 class Company:
-    'Company'
+    __metaclass__ = PoolMeta
     __name__ = 'company.company'
     
     idomain_alert_expire = fields.Char('Domain Alert Expire',
